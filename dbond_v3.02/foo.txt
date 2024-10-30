@@ -1,0 +1,58 @@
+# Spectra=[FILENAME]
+# Specifies path to the spectra file to search
+# Supported formats: *.mgf, *.pkl, *.dta 
+# In case of dta type, for multiple MS/MS scans, at least one blank line must be between each MS/MS scan
+Spectra= test/foo.pkl
+
+# Instrument=[TYPE(ESI-TRAP|ESI-QTOF)]
+# Specifies the type of MS/MS instrument used (or best matched) for peptide fragmentation.
+# Default value is ESI-TRAP
+Instrument= ESI-QTOF
+
+
+# Fasta=[FILENAME]
+# Specifies path to the database file (*.fasta) to search
+Fasta= test/foo.fasta
+
+# PeptTolerance=[MASS]
+# Sets a parent mass tolerance in dalton, default value is 1.2
+PeptTolerance=
+
+# PPMtolerance=[MASS]
+# Sets a parent mass tolerance in ppm
+PPMtolerance=
+
+# FragTolerance=[MASS]
+# Sets a fragment ion mass tolerance in dalton, default value is 0.6
+FragTolerance=
+
+# Enzyme=[NAME]{,[CLEAVAGE/TERMINUS(N|C)]}*
+# Specifies the reagent used for protein digestion, default value is 'Trypsin, KR/C'.
+# To ignore the enzyme specificity (for non-enzyme search), set the value to 'NONE, */*'.  
+# Enzyme=NONE, */*
+# Enzyme=Trypsin, KR/C
+# Enzyme=LysN, K/N
+# Enzyme=LysC+AspN, K/C, D/N
+Enzyme=
+
+# MissedCleavage=[NUMBER]
+# Sets the number of allowed missed cleavage sites, default value is 1
+MissedCleavage=                        			
+
+# {Mod=[NAME],[POSITION(Nterm|Cterm|amino acids)],[RESIDUE(Nterm|Cterm|amino acids)],[MASS(in dalton)]}*
+# Specifies post-translational modifications
+# Mod=Phospho, S, S, 79.966331
+# Mod=PyroGlu, Nterm, Q, -17.026549
+# Mod=Acetyl, Nterm, Nterm, 42.010565
+Mod=Oxidation, M, M, 15.994915
+
+# FreeCysteineBlock=[NAME],[MASS]
+# Specifies the chemical derivative to a free cysteine by the reaction, 
+# if free (non-disulfide) cysteines were treated to minimize/block the disulfide bond interchange
+# FreeCysteineBlock= Carbamidomethyl, 57
+FreeCysteineBlock=
+
+# Interaction=[true|false]
+# Allows disulfide bond linkage between different proteins, default value is false
+Interaction=
+
